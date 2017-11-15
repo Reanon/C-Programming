@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+class A
+{	
+  void swap(A &a,A &b) { //作业提交：A &a,A &b
+	int temp = a.x;
+	a.x = b.x;
+	b.x = temp;
+}
+
+int main()
+{
+	A a, b;
+	a.x = 3;
+	b.x = 5;
+	swap(a, b);
+	cout << a.getX() << "," << b.getX() << endl;
+    return 0;
+}
