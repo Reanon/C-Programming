@@ -9,6 +9,7 @@ class A
 	b.x = temp;
 }
 
+
 int main()
 {
 	A a, b;
