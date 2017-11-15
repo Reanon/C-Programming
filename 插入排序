@@ -1,0 +1,37 @@
+#include "stdafx.h"
+/*
+将整个数组a分为有序和无序两个部分。前者在左边，后者在右边。
+最开始有序的只有a[0],其余都为无序部分。每次取出无序部分的第一个（最左边）元素，把它加入有序部分。
+假设插入合适位置p,则原p位置及其后面的有序部分元素都向右移动一个位置，有序部分即增加了一个元素。
+*/
+#include<iostream>
+using namespace std;
+void InsertionSort(int a[], int size = 6) {
+	for (int i = 1; i < size; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			if (a[j]>a[i])
+			{
+				int tem = a[i];
+				for (int k = i; k > j; k--) //
+				{
+					a[k] = a[k - 1];
+				}
+				a[j] = tem;
+			}
+			/*break;*/
+		}
+	}
+}
+int main()
+{
+	int a[6] = { 6,5,4,3,2,1 };
+	InsertionSort(a);
+
+	for (int i = 0; i < 6; i++)
+	{
+		cout << a[i] << " ";
+	}
+	return 0;
+}
