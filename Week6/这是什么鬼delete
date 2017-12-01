@@ -1,0 +1,34 @@
+
+// week6_03.cpp: 定义控制台应用程序的入口点。
+//
+/*
+输入
+无
+输出
+destructor B
+destructor A
+*/
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+class A
+{
+public:
+        A() { }//构造函数不要写成虚函数
+        // 在此处补充你的代码
+        virtual ~A() {//析构函数最好写成虚函数
+               cout << "destructor A" << endl;
+        }
+        // 在此处补充你的代码
+};
+class B :public A {
+public:
+        ~B() { cout << "destructor B" << endl; }//B析构函数自动变虚函数
+};
+int main()
+{
+        A * pa;
+        pa = new B;
+        delete pa;
+        return 0;
+}
